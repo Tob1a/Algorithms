@@ -45,15 +45,17 @@ int SingleExperiment(int length, int max_instances)
 void proc_Experiment(int min_length, int max_length)
 {
     int max_instaces = 5;
-    int step = 10, time;
+    int step = 10;
+    float time;
     for (int length = min_length; length < max_instaces; length = step)
     {
         time = SingleExperiment(length, max_instaces);
-        printf("%d\n", time);
+        printf("%f\n", time);
     }
 }
 
 int main()
 {
+    proc_Experiment(3, 5);
     return 0;
 }
