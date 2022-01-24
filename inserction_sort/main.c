@@ -1,6 +1,9 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "GenerateRandomArray.h"
+#include "InsectionSort.h"
+
 void GenerateRandomArray(int *array, int lenght)
 {
 
