@@ -4,29 +4,6 @@
 #include "GenerateRandomArray.h"
 #include "InsectionSort.h"
 
-void GenerateRandomArray(int *array, int lenght)
-{
-
-    for (int i = 0; i < lenght; i++)
-    {
-        array[i] = rand() % 100 + 1;
-    }
-}
-void InsectionSort(int *array, int lenght)
-{
-    int key, i;
-    for (int j = 2; j < lenght; j++)
-    {
-        key = array[j];
-        i = j - 1;
-        while (i > 0 && array[j] > key)
-        {
-            array[i + 1] = array[i];
-            i = i - 1;
-        }
-        array[i + 1] = key;
-    }
-}
 int SingleExperiment(int length, int max_instances)
 {
     int t_tot = 0, t_end, t_elapsed, A[length];
