@@ -9,7 +9,7 @@ void GenerateRandomArray(int *array, int lenght)
         array[i] = rand() % 100 + 1;
     }
 }
-int InsectionSort(int *array, int lenght)
+void InsectionSort(int *array, int lenght)
 {
     int key, i;
     for (int j = 2; j < lenght; j++)
@@ -23,8 +23,6 @@ int InsectionSort(int *array, int lenght)
         }
         array[i + 1] = key;
     }
-
-    return *array;
 }
 int SingleExperiment(int length, int max_instances)
 {
@@ -56,6 +54,6 @@ void proc_Experiment(int min_length, int max_length)
 
 int main()
 {
-    proc_Experiment(3, 5);
+    proc_Experiment(3, 15);
     return 0;
 }
