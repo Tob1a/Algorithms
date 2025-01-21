@@ -6,7 +6,7 @@
  *
  */
 
-void merge(int *arr, int start, int mid, int end)
+void merge(double *arr, int start, int mid, int end)
 {
     int n1 = mid - start + 1;
     int n2 = end - mid;
@@ -49,7 +49,7 @@ void merge(int *arr, int start, int mid, int end)
     }
 }
 
-void merge_sort(int *arr, int start, int end)
+void merge_sort(double *arr, int start, int end)
 {
     if (start < end)
     {
@@ -62,17 +62,3 @@ void merge_sort(int *arr, int start, int end)
 }
 
 // presa una stringa posso dare una determinata funzione
-
-/**
- * typedef void (*algo_ptr)(int *,int,int);
-algo_ptr select_algorithm(char *algo_name){
-    if(strcmp(algo_name,"INSERTION")){
-        return &insertionSort;
-
-    }else if(strcmp(algo_name,"MERGE")){
-        return &merge_sort;
-    }else{
-        printf("Errore - l'algoritmo %s non esiste.",algo_name);
-    }
-}
-*/

@@ -2,11 +2,6 @@
 #include <math.h>
 
 // metodi
-void errore(FILE *output)
-{
-    fprintf(output, "Errore nei vincoli");
-    exit(1);
-}
 
 int main(void)
 {
@@ -21,7 +16,8 @@ int main(void)
     // vincoli
     if (N < 1 || Q > 100000)
     {
-        errore(output);
+        fprintf(stderr, "Errore nei vincoli");
+        return -1;
     }
 
     int xyz[N][3];
@@ -33,12 +29,21 @@ int main(void)
     for (i = Q; i > 0; i--) // ho dovuto fare il ciclo al contrario senno' mi dava i risultati al oirartnoc
     {
         fscanf(input, "%d\n", &u[i]);
-
+        if (u[i] < 0)
+        {
+            fprintf(stderr, "Errore nei vincoli");
+            return -1;
+        }
         j = 0;
 
         for (f = 0; f < N; f++)
         {
             distanza = sqrt(pow(xyz[f][0], 2) + pow(xyz[f][1], 2) + pow(xyz[f][2], 2));
+            if (xyz[f][0] > 1073741824 || xyz[f][0] < -1073741824 || xyz[f][1] > 1073741824 || xyz[f][1] < -1073741824 || xyz[f][2] > 1073741824 || xyz[f][2] < -1073741824)
+            {
+                fprintf(stderr, "Errore nei vincoli");
+                return -1;
+            }
             if (distanza - u[i] <= 0)
                 j++;
         }
